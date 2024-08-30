@@ -8,7 +8,7 @@ const say = require('say');
 const BatteryStatus = require('./lib');
 
 const appID = 'Myssa - Battery Checker';
-const icon = path.join(__dirname, './logo-round-192.png');
+const icon = path.join(__dirname, '../logo-round-192.png');
 
 let interval = 60;
 let timer = null;
