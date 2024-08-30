@@ -2,7 +2,7 @@
   "name": "battery-checker",
   "version": "1.0.0",
   "description": "A simple js script for checking a battery status",
-  "main": "battery-checker.js",
+  "main": "src/index.js",
   "scripts": {
     "start": "node ."
   },
@@ -17,10 +17,12 @@
     "url": "https://github.com/mussacharles60/battery-checker.git"
   },
   "dependencies": {
-    "battery-level": "^3.0.0",
-    "is-charging": "^2.0.0",
+    "execa": "^9.3.1",
+    "linux-battery": "^3.0.1",
     "node-notifier": "^10.0.1",
+    "osx-battery": "^4.0.0",
     "play-sound": "^1.1.6",
-    "say": "^0.16.0"
+    "say": "^0.16.0",
+    "to-decimal": "^2.0.0"
   }
 }

@@ -1,9 +1,11 @@
-const batteryLevel = require('battery-level');
-const isCharging = require('is-charging');
+// const batteryLevel = require('battery-level');
+// const isCharging = require('is-charging');
 const notifier = require('node-notifier');
 // const player = require('play-sound')((opts = {}));
 const path = require('path');
 const say = require('say');
+
+const BatteryStatus = require('./lib');
 
 const appID = 'Myssa - Battery Checker';
 const icon = path.join(__dirname, './logo-round-192.png');
@@ -22,8 +24,11 @@ const speak = async (text) => {
 
 const checkBattery = async () => {
   try {
-    const level = await batteryLevel();
-    const charging = await isCharging();
+    // const level = await batteryLevel();
+    // const charging = await isCharging();
+    const batteryStatus = await BatteryStatus();
+    const level = batteryStatus.percent;
+    const charging = batteryStatus.charging;
     const batteryPercentage = Math.round(level * 100);
 
     console.log(`[battery-checker]: Battery level: ${batteryPercentage}%`);
