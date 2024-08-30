@@ -1,0 +1,26 @@
+{
+  "name": "battery-checker",
+  "version": "1.0.0",
+  "description": "A simple js script for checking a battery status",
+  "main": "battery-checker.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "keywords": [],
+  "author": {
+    "name": "Mussa Charles",
+    "email": "mussacharles60@gmail.com"
+  },
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mussacharles60/battery-checker.git"
+  },
+  "dependencies": {
+    "battery-level": "^3.0.0",
+    "is-charging": "^2.0.0",
+    "node-notifier": "^10.0.1",
+    "play-sound": "^1.1.6",
+    "say": "^0.16.0"
+  }
+}
