@@ -3,7 +3,7 @@
 const notifier = require('node-notifier');
 // const player = require('play-sound')((opts = {}));
 const path = require('path');
-const say = require('say');
+const say = require('./say');
 
 const BatteryStatus = require('./lib');
 
@@ -31,8 +31,7 @@ const checkBattery = async () => {
     const charging = batteryStatus.charging;
     const batteryPercentage = Math.round(level * 100);
 
-    console.log(`[battery-checker]: Battery level: ${batteryPercentage}%`);
-    console.log(`[battery-checker]: Charging: ${charging}`);
+    console.log(`[battery-checker]: Battery: ${batteryPercentage}% ${charging ? 'charging' : 'not charging'}`);
 
     if (charging && batteryPercentage >= 100) {
       interval = 10;
@@ -75,7 +74,7 @@ const checkBattery = async () => {
         console.error('[battery-checker]: speak: catch: error:', error);
       }
     } else {
-      interval = 60;
+      interval = 10;
       startTimer();
     }
   } catch (error) {
